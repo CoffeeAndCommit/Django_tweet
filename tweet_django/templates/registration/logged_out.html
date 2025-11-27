@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Logged Out | Tweet In Django
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <h1 class="text-center mb-3 fw-bold display-5 text-primary">
+        You’ve Been Logged Out
+    </h1>
+
+    <p class="text-center text-muted fs-5 mb-5">
+        Hope to see you back soon! 💬
+    </p>
+
+    <div class="col-lg-5 col-md-7 mx-auto">
+        <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-body p-5 text-center">
+
+                <h2 class="fw-semibold text-secondary mb-4">🔒 Logged Out</h2>
+
+                <p class="mb-4 text-dark fs-6">
+                    You have successfully logged out of your account.
+                </p>
+
+                <a href="{% url 'login' %}" class="btn btn-primary w-100 py-2 fs-5 fw-semibold rounded-3 shadow-sm">
+                    Login Again
+                </a>
+
+                <p class="text-center mt-3">
+                    Or go back to the <a href="{% url 'home' %}" class="text-primary fw-semibold">Home Page</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

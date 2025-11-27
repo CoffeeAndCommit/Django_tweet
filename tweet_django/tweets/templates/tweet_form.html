@@ -29,7 +29,7 @@ Tweet In Django
                 </h2>
 
                 <form action="" method="POST" enctype="multipart/form-data">
-                
+                    {{ cs}}
                     {% csrf_token %}
 
                     {% for field in form %}
