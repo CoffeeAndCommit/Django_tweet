@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Page Not Found | Tweet App
+{% endblock %}
+
+{% block content %}
+<div class="container text-center py-5">
+
+    <div class="mt-5">
+        <i class="bi bi-emoji-frown text-warning" style="font-size: 5rem;"></i>
+    </div>
+
+    <h1 class="display-4 fw-bold text-danger mt-4">404 - Page Not Found</h1>
+
+    <p class="text-muted fs-5 mt-3 mb-4">
+        Oops! The page you're looking for doesn't exist or was moved.
+    </p>
+
+    <a href="/" class="btn btn-primary btn-lg rounded-3 shadow-sm px-4">
+        Go Back Home
+    </a>
+
+</div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Tweet In Django
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <h1 class="text-center mb-3 fw-bold display-5 text-primary">
+        Welcome to the Tweet App
+    </h1>
+
+    <p class="text-center text-muted fs-5 mb-5">
+        {% if tweet %}
+            Update your tweet with style ✨
+        {% else %}
+            Share what's on your mind today 💬
+        {% endif %}
+    </p>
+
+    <div class="col-lg-7 col-md-9 mx-auto">
+        <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-body p-5">
+
+                <h2 class="fw-semibold text-secondary mb-4">
+                    {% if tweet %} ✏️ Edit Tweet {% else %} 📝 Create Tweet {% endif %}
+                </h2>
+
+                <form action="" method="POST" enctype="multipart/form-data">
+                
+                    {% csrf_token %}
+
+                    {% for field in form %}
+                    <div class="mb-4">
+                        <label class="form-label fw-bold text-dark fs-6">
+                            {{ field.label }}
+                        </label>
+
+                        {{ field }}
+
+                        {% if field.errors %}
+                            <div class="text-danger small mt-1">{{ field.errors }}</div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+
+                    <button class="btn btn-primary w-100 py-2 fs-5 fw-semibold rounded-3 shadow-sm" type="submit">
+                        {% if tweet %} Update Tweet {% else %} Create Tweet {% endif %}
+                    </button>
+                </form>
+                <a href="{% url 'tweet_list' %}">Back To Tweet List</a>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
